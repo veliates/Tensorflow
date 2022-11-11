@@ -1,0 +1,74 @@
+from __future__ import absolute_import, division, print_function, unicode_literals
+import tensorflow as tf
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import array
+
+from tensorflow import keras
+from tensorflow.keras import layers
+from tensorflow.keras.models import Sequential
+import pathlib
+
+fashion= keras.datasets.fashion_mnist
+
+(train_image, train_label) , (test_image, test_label) = fashion.load_data()
+num_data= len(test_image)+len(train_image)
+
+data = np.append(test_image,train_image)
+
+print(len(data))
+
+#data= test_image + train_image
+#print(isinstance(train_image,array))
+
+
+# train_image=data[0:num_data*8/10]
+# data.reverse()
+# test_image= data[0:num_data*2/10]
+
+
+
+class_names = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
+               'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+
+
+print(len(test_image))
+print(len(train_image))
+# plt.figure()
+# plt.imshow(train_image[0])
+# plt.colorbar()
+# plt.grid(False)
+# #plt.title(class_names[0])
+# plt.show()
+
+#print(train_image.shape)
+#print(test_image.shape)
+
+#tensor1= tf.Variable([["erste", "zweite", "dritte"]], [["abc"]], [["z", "z", "z"]], tf.string)
+#tensor2= tf.Variable([["erste", "zweite", "dritte"]], tf.string)
+
+#print(tensor1.rank)
+# print(tf.rank(tensor1))
+# print(tf.rank(tensor2))
+#tensor3= tf.reshape(tensor1, [1,9])
+
+#tensor3= tf.zeros([5,5,5,5])
+
+#print(tensor3)
+
+#with tf.Session() as sess:
+#    shapex= sess.run(tensor3[0])
+#    shapey= sess.run(tensor3[1])
+
+
+
+# for i in shapex:
+#     for j in shapey:
+#         tensor[i
+#         print()
+
+
+#tensor4= tf.reshape(tensor3, [25, -1])
+
+#print("shape is %s this" % (shapex))
